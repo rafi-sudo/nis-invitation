@@ -28,10 +28,31 @@
     <p id="typewriterText" class="mb-0 mb-4 text-center"></p>
   </blockquote>
   <figcaption class="blockquote-footer text-center">
-    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."<cite title="Source Title">QS. Ar-Ruum ayat 21</cite>
+    Firman Allah<cite title="Source Title">QS. Ar-Ruum ayat 21</cite>
   </figcaption>
 </figure>
 </body>
+<script>
+  const text = `"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir"`;
+  const el = document.getElementById("typewriterText");
+
+  let index = 0;
+  function typeWriter() {
+    if (index < text.length) {
+      el.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 40); // kecepatan ketik
+    }
+  }
+
+  // Jalankan setelah halaman dimuat
+  window.addEventListener("DOMContentLoaded", typeWriter);
+</script>
+<script>
+  window.onload = function () {
+    document.querySelector('.bottom-center-alert').classList.add('fade-in-scale');
+  };
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 
