@@ -34,6 +34,28 @@
     from, to { border-color: transparent }
     50% { border-color: orange }
   }
+  @keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  }
+
+  .fade-in-scale {
+    opacity: 0; /* Start hidden, in case JS loads slowly */
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+  .bottom-center-alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  }
 </style>
 <title>Undangan A Dian & Teh Dewi</title>
 </head>
@@ -46,11 +68,13 @@
     Senin, 12 September 2024 <cite title="Source Title">Simpan tanggalnya!</cite>
   </figcaption>
 </figure>
-<div class="alert alert-dismissible alert-secondary bottom-center-alert text-center">
+<div class="alert alert-dismissible alert-secondary bottom-center-alert text-center fade-in-scale">
   <i class="fas fa-envelope fa-sm fa-fw"></i>
   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  <strong><p>Kepada Yang Terhormat</p>
-     <p>Bapak/Ibu/Saudara -i</p></strong>
+  <strong>
+    <p>Kepada Yang Terhormat</p>
+    <p>Bapak/Ibu/Saudara -i</p>
+  </strong>
   <a href="#" class="alert-link">Buka Undangan</a>.
 </div>
 <script>
@@ -68,6 +92,11 @@
 
   // Jalankan setelah halaman dimuat
   window.addEventListener("DOMContentLoaded", typeWriter);
+</script>
+<script>
+  window.onload = function () {
+    document.querySelector('.bottom-center-alert').classList.add('fade-in-scale');
+  };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
