@@ -53,30 +53,48 @@
     document.querySelector('.bottom-center-alert').classList.add('fade-in-scale');
   };
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("bgm-player");
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          // Autoplay berhasil
+        })
+        .catch(error => {
+          // Autoplay gagal (mungkin karena policy browser)
+          console.log("Autoplay diblokir oleh browser:", error);
+        });
+    }
+  });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 
 <footer><ul class="nav nav-tabs" role="tablist">
   <li class="nav-item" role="presentation">
-    <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">Home</a>
+    <i class="fas fa-home fa-sm fa-fw"></i>
+    <a class="nav-link active" data-bs-toggle="tab" href="/index.html" aria-selected="true" role="tab"></a>
   </li>
   <li class="nav-item" role="presentation">
-    <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" tabindex="-1" role="tab">Profile</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link disabled" href="#" aria-selected="false" tabindex="-1" role="tab">Disabled</a>
+    <i class="fas fa-quote-right fa-sm fa-fw"></i>
+    <a class="nav-link" data-bs-toggle="tab" href="/quote.html" aria-selected="false" tabindex="-1" role="tab"></a>
   </li>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-    <div class="dropdown-menu">
-      <h6 class="dropdown-header">Dropdown header</h6>
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </div>
-  </li>
+  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    Music Backsound
+  </a>
+  <div class="dropdown-menu p-3" style="width: 250px;">
+    <h6 class="dropdown-header">BGM Player</h6>
+    <audio id="bgm-player" controls autoplay hidden>
+      <source src="/assets/bgm/Miss U - Everet Almond.mp3" type="audio/mpeg">
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+    <p class="small text-muted">Audio akan diputar otomatis.</p>
+  </div>
+</li>
 </ul>
 </div></footer>
 </html>
