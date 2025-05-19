@@ -48,23 +48,6 @@
   // Jalankan setelah halaman dimuat
   window.addEventListener("DOMContentLoaded", typeWriter);
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const audio = document.getElementById("bgm-player");
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          // Autoplay berhasil
-        })
-        .catch(error => {
-          // Autoplay gagal (mungkin karena policy browser)
-          console.log("Autoplay diblokir oleh browser:", error);
-        });
-    }
-  });
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 
@@ -83,11 +66,11 @@
   </a>
   <div class="dropdown-menu p-3" style="width: 250px;">
     <h6 class="dropdown-header">BGM Player</h6>
-      <audio id="bgm-player" controls autoplay hidden>
+      <audio id="controls autoplay">
       <source src="assets/bgm/Miss U - Everet Almond.mp3" type="audio/mpeg">
       Browser Anda tidak mendukung elemen audio.
     </audio>
-    <p class="small text-muted">Audio akan diputar otomatis.</p>
+    <p class="small text-muted">Silakan Klik Play.</p>
   </div>
 </li>
 </ul>
