@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Ini website untuk undangan digital Dian&Dewi"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.0/lumen/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<style>
+  .typewriter p {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid orange; /* optional: typewriter cursor */
+    animation: typing 4s steps(60, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+  @keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  }
+
+</style>
+<title>Undangan A Dian & Teh Dewi</title>
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+<figure style="margin: 19em 40px;">
+  <img src="assets/image/8e03af8a-747a-4f41-b45b-f51c7413be16_removalai_preview.png" alt="Gambar Undangan" class="img-fluid max-width: 60%;height: auto;"><img/>
+  <blockquote class="blockquote">
+    <p id="typewriterText" class="mb-0 mb-4 text-center"></p>
+  </blockquote>
+  <figcaption class="blockquote-footer text-center">
+    Hormat kami <cite title="Source Title">Dian dan Dewi</cite>
+  </figcaption>
+</figure>
+<button type="button" class="btn btn-primary"><a href="" class="text text-white">KONFIRMASI DAN KIRIM UCAPAN</a></button>
+<button type="button" class="btn btn-primary"><a href="/gift.html" class="text text-white">🎁 Berikan Gift</a></button>
+<button id="playButton">▶ Play</button>
+  <audio id="myAudio" src="assets/bgm/Miss U - Everet Almond.mp3"></audio>
+<script>
+  const text = `Merupakan suatu kebahagian dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara -i, berkenan hadir dan memberikan do'a restu kepada kedua mempelai `;
+  const el = document.getElementById("typewriterText");
+
+  let index = 0;
+  function typeWriter() {
+    if (index < text.length) {
+      el.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 40); // kecepatan ketik
+    }
+  }
+
+  // Jalankan setelah halaman dimuat
+  window.addEventListener("DOMContentLoaded", typeWriter);
+</script>
+<script>
+  window.onload = function () {
+    document.querySelector('.bottom-center-alert').classList.add('fade-in-scale');
+  };
+</script>
+
+</body>
+</html>
