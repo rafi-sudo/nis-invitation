@@ -60,11 +60,11 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="cashlessModalLabel">Info Pembayaran</h5>
+          <h5 class="modal-title" id="cashlessModalLabel">Kirim Cashless</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
         </div>
         <div class="modal-body">
-          Anda memilih metode pembayaran <strong>CASHLESS</strong>. Silakan lanjutkan ke proses berikutnya.
+          Anda memilih metode pembayaran <strong>💳💷CASHLESS</strong>.Silakan ke No Rek : (cantumkan no rek / e-wallet disini)
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -72,7 +72,27 @@
       </div>
     </div>
   </div>
-<button type="button" class="btn btn-primary"><a href="" class="text text-white">🎁 KIRIM KADO</a></button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cashlessModal">
+    🎁 KIRIM KADO
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="cashlessModal" tabindex="-1" aria-labelledby="cashlessModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cashlessModalLabel">Kirim Kado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          Anda memilih mengirim kado <strong>💳💷CASHLESS</strong> kirim ke alamat : (cantumkan Alamat disini)
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <button type="button" class="btn btn-primary"><a href="/index.html" class="text text-white">📩 TUTUP UNDANGAN</a></button>
 <button id="playButton">▶ Play</button>
   <audio id="myAudio" src="assets/bgm/Miss U - Everet Almond.mp3"></audio>
