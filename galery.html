@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Ini website untuk undangan digital Dian&Dewi"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.0/lumen/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+
+  </style>
+<title>Undangan A Dian & Teh Dewi</title>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+<figure style="margin: 19em 40px;">
+    <p><b>GALERY PREWEDDING</b></p>
+ <div class="swiper mySwiper" style="width: 100%; max-width: 600px; margin:auto;">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://images.pexels.com/photos/2249290/pexels-photo-2249290.jpeg" alt="Menjahit" style="width:100%;"></div>
+    <div class="swiper-slide"><img src="https://images.pexels.com/photos/461035/pexels-photo-461035.jpeg" alt="Menjahit" style="width:100%;"></div>
+    <div class="swiper-slide"><img src="https://images.pexels.com/photos/1189675/pexels-photo-1189675.jpeg" alt="Menjahit" style="width:100%;"></div>
+  </div>
+  <!-- Navigasi panah -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <!-- Pagination bulat -->
+  <div class="swiper-pagination"></div>
+  </div>  
+</figure>
+<button type="button" class="btn btn-primary"><a href="/mempelai.html" class="text text-white">🗺️ Maps</a></button>
+<button id="playButton">▶ Play</button>
+  <audio id="myAudio" src="assets/bgm/Miss U - Everet Almond.mp3"></audio>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<script>
+    const playButton = document.getElementById("playButton");
+    const audio = document.getElementById("myAudio");
+
+    playButton.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "⏸ Pause";
+      } else {
+        audio.pause();
+        playButton.textContent = "▶ Play";
+      }
+    });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+
+</html>
